@@ -7,21 +7,27 @@ using namespace std;
 
 /**
  * \brief Это функция выполняет вычисление по заданной формуле
- * \param x параметр х
- * \param y параметр y
+ * \param ab параметр ab
+ * \param ac параметр ac
+ * \param a параметр a
  * \return значение функции
  */
 double getA(const double ab, const double ac, const double a);
 /**
  * \brief Это функция выполняет вычисление по заданной формуле
- * \param x параметр х
- * \param y параметр y
- * \param z параметр z
- * \return 0  значение функции
+ * \param ab параметр ab
+ * \param ac параметр ac
+ * \param a параметр a
+ * \return значение функции
  */
 double getB(const double ab, const double ac, const double a);
-
-
+/**
+ * \brief Это функция выполняет вычисление по заданной формуле
+ * \param ab параметр ab
+ * \param ac параметр ac
+ * \param a параметр a
+ * \return значение функции
+ */
 double getC(const double ab, const double ac, const double a);
 
 /**
