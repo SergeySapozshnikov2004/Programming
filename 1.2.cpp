@@ -1,4 +1,3 @@
-#define _USE_MATH_DEFINES // for C++
 #include <cmath>
 #include <iomanip>
 #include <iostream>
@@ -6,29 +5,31 @@
 using namespace std;
 
 /**
- * \brief Это функция выполняет вычисление по заданной формуле
+ * \brief Это функция находит ВС
  * \param ab параметр ab
  * \param ac параметр ac
  * \param a параметр a
- * \return значение функции
+ * \return значение ВС
  */
-double getA(const double ab, const double ac, const double a);
+double getBC(const double ab, const double ac, const double a);
+
 /**
- * \brief Это функция выполняет вычисление по заданной формуле
+ * \brief Это функция находит площадь
  * \param ab параметр ab
  * \param ac параметр ac
  * \param a параметр a
- * \return значение функции
+ * \return значение площади
  */
-double getB(const double ab, const double ac, const double a);
+double getS(const double ab, const double ac, const double a);
+
 /**
- * \brief Это функция выполняет вычисление по заданной формуле
+ * \brief Это функция выполняет вычисление радиуса
  * \param ab параметр ab
  * \param ac параметр ac
  * \param a параметр a
- * \return значение функции
+ * \return значение радиуса
  */
-double getC(const double ab, const double ac, const double a);
+double getR(const double ab, const double ac, const double a);
 
 /**
  * \brief Точка входа в программу
@@ -45,9 +46,9 @@ int main()
     cout << std::setprecision(9) << "Введите угол α " << endl;
     double a;
     cin >> a;
-    const double bc = getA(ab, ac, a);
-    const double s = getB(ab, ac, a);
-    const double r = getC(ab, ac, a);
+    const double bc = getBC(ab, ac, a);
+    const double s = getS(ab, ac, a);
+    const double r = getR(ab, ac, a);
 
 
     cout << setprecision(9) << " BC = " << bc << " S = " << s  << " R = " << r << endl;
@@ -56,19 +57,17 @@ int main()
 
 
 
-double getA(const double ab, const double ac, const double a)
+double getBC(const double ab, const double ac, const double a)
 {
     return sqrt(ab * ab + ac * ac - 2 * ab * ac * cos(a));
 }
 
-double getB(const double ab, const double ac, const double a)
+double getS(const double ab, const double ac, const double a)
 {
     return (ab * ac * sin(a)) / 2.0;
 }
 
-double getC(const double ab, const double ac, const double a)
+double getR(const double ab, const double ac, const double a)
 {
     return sqrt(pow(ab, 2) + pow(ac, 2) - 2 * ab * ac * cos(a)) / sin(a) ;
 }
-
-
