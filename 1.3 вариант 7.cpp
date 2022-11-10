@@ -6,9 +6,9 @@ using namespace std;
 
 /**
  * \brief Это функция выполняет вычисление сопротивления
- * \param l параметр l
- * \param s параметр s
- * \param p параметр p
+ * \param l параметр l - длина проводника
+ * \param s параметр s - площадь поперечного сечения
+ * \param p параметр p - удельное сопротивление
  * \return значение сопротивления
  */
 double getR(const double l, const double s, const double p);
