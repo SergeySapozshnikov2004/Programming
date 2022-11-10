@@ -1,4 +1,3 @@
-#define _USE_MATH_DEFINES // for C++
 #include <cmath>
 #include <iomanip>
 #include <iostream>
@@ -6,23 +5,28 @@
 using namespace std;
 
 /**
- * \brief Это функция выполняет вычисление по заданной формуле
- * \param x параметр х
- * \param y параметр y
- * \return значение функции
+ * \brief Эта функция проверяет явлиется ли a + b положительной 
+ * \param a параметр a
+ * \param b параметр b
+ * \return значение суммы
  */
-double getA1(const double a, const double b);
-double getA2(const double a, const double c);
-double getA3(const double b, const double c);
-
+double getSum1(const double a, const double b);
 
 /**
- * \brief Это функция выполняет вычисление по заданной формуле
- * \param x параметр х
- * \param y параметр y
- * \param z параметр z
- * \return 0  значение функции
+ * \brief Эта функция проверяет явлиется ли a + c положительной 
+ * \param a параметр a
+ * \param c параметр c
+ * \return значение суммы
  */
+double getSum2(const double a, const double c);
+
+/**
+ * \brief Эта функция проверяет явлиется ли b + c положительной 
+ * \param b параметр b
+ * \param c параметр c
+ * \return значение суммы
+ */
+double getSum3(const double b, const double c);
 
 /**
  * \brief Точка входа в программу
@@ -30,56 +34,53 @@ double getA3(const double b, const double c);
  */
 int main()
 {
-    cout << std::setprecision(9) << "Введите a" << endl;
+    cout << "Введите a" << endl;
     double a;
     cin >> a;
-    cout << std::setprecision(9) << "Введите b" << endl;
+    cout << "Введите b" << endl;
     double b;
     cin >> b;
-    cout << std::setprecision(9) << "Введите c" << endl;
+    cout << "Введите c" << endl;
     double c;
     cin >> c;
 
     
-    const double a1 = getA1(a, b);
-    const double a2 = getA2(a, c);
-    const double a3 = getA2(b, c);
+    const double a1 = getSum1(a, b);
+    const double a2 = getSum2(a, c);
+    const double a3 = getSum3(b, c);
    
     
     
     if ((a + b) > 0) { 
-        cout << setprecision(9) << "Сумма положительна: a + b = "  << a1 << endl;
+        cout << "Сумма положительна: a + b = "  << a1 << endl;
     }
     
     if ((a + c) > 0) { 
-        cout << setprecision(9) << "Сумма положительна: a + c = " << a2 << endl;
+        cout << "Сумма положительна: a + c = " << a2 << endl;
     }
     
     if ((b + c) > 0) { 
-        cout << setprecision(9) << "Сумма положительна: b + c = " << a3 << endl;
+        cout << "Сумма положительна: b + c = " << a3 << endl;
     }
     
-    else { 
-        cout << setprecision(9) << "Из  чисел a, b, c не вышла ни одна  положительная сумма " << endl;
+    if (((a + b) < 0) && ((a + c) < 0) && ((b + c) < 0)) { 
+        cout << "Из  чисел a, b, c не вышла ни одна  положительная сумма " << endl;
     }
     
 }
 
 
-double getA1(const double a, const double b)
+double getSum1(const double a, const double b)
 {
     return a + b;
 }
 
-double getA2(const double a, const double c)
+double getSum2(const double a, const double c)
 {
     return a + c;
 }
 
-double getA3(const double b, const double c)
+double getSum3(const double b, const double c)
 {
     return b + c;
 }
-
-
-
