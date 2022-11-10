@@ -37,13 +37,13 @@ double getR(const double ab, const double ac, const double a);
  */
 int main()
 {
-    cout << std::setprecision(9) << "Введите AB " << endl;
+    cout << "Введите AB " << endl;
     double ab;
     cin >> ab;
-    cout << std::setprecision(9) << "Введите AC " << endl;
+    cout << "Введите AC " << endl;
     double ac;
     cin >> ac;
-    cout << std::setprecision(9) << "Введите угол α " << endl;
+    cout << "Введите угол α " << endl;
     double a;
     cin >> a;
     const double bc = getBC(ab, ac, a);
@@ -51,7 +51,7 @@ int main()
     const double r = getR(ab, ac, a);
 
 
-    cout << setprecision(9) << " BC = " << bc << " S = " << s  << " R = " << r << endl;
+    cout << " BC = " << bc << " S = " << s  << " R = " << r << endl;
     return 0;
 }
 
