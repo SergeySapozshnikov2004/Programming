@@ -18,14 +18,14 @@ double getN(const double a, const double n);
  * \param n параметр n
  * \return 0
  */
-double getSec_N(const double a, const double n);
+double getSecN(const double a, const double n);
 /**
  * \brief Это функция выполняет вычисление по заданной формуле
  * \param a параметр a
  * \param n параметр n
  * \return 0
  */
-double getThr_N(const double a, const double n);
+double getThrN(const double a, const double n);
 
 
 /**
@@ -42,8 +42,8 @@ double getNum(const std::string& message = "" );
 enum class userInput
 {    
     N,
-    Sec_N,
-    Thr_N
+    SecN,
+    ThrN
 };
 
 
@@ -56,8 +56,8 @@ int main()
     
     std::cout << "Введите число соответствующее заданию.\n"
         << static_cast<int>(userInput::N)<< " - вычисление A * N, "
-        << static_cast<int>(userInput::Sec_N)<< " - вычисление A * 2N, "
-        << static_cast<int>(userInput::Thr_N)<< " - вычисление A * 3N \n";
+        << static_cast<int>(userInput::SecN)<< " - вычисление A * 2N, "
+        << static_cast<int>(userInput::ThrN)<< " - вычисление A * 3N \n";
         
     int input = 0;
     std::cin >> input;
@@ -72,16 +72,16 @@ int main()
             break;
         }
         
-        case userInput::Sec_N:
+        case userInput::SecN:
         {
-            const auto n2 = getSec_N(a, n);
+            const auto n2 = getSecN(a, n);
             std::cout << " A * 2N = " << n2;
             break;
         }
         
-        case userInput::Thr_N:
+        case userInput::ThrN:
         {
-            const auto n3 = getThr_N(a, n);
+            const auto n3 = getThrN(a, n);
             std::cout << " A * 3N = " << n3;
             break;
         }
@@ -94,12 +94,12 @@ double getN(const double a, const double n)
     return a * n;
 }
 
-double getSec_N(const double a, const double n)
+double getSecN(const double a, const double n)
 {
     return a * 2 * n;
 }
 
-double getThr_N(const double a, const double n)
+double getThrN(const double a, const double n)
 {
     return a * 3 * n ;
 }
