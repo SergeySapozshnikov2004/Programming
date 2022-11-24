@@ -5,28 +5,13 @@
 using namespace std;
 
 /**
- * \brief Эта функция проверяет явлиется ли a + b положительной 
+ * \brief Эта функция проверяет есть ли среди чисел сумма положительная 
  * \param a параметр a
  * \param b параметр b
- * \return значение суммы
+ * \param c параметр с
+ * \return true или  false
  */
-double getSum1(const double a, const double b);
-
-/**
- * \brief Эта функция проверяет явлиется ли a + c положительной 
- * \param a параметр a
- * \param c параметр c
- * \return значение суммы
- */
-double getSum2(const double a, const double c);
-
-/**
- * \brief Эта функция проверяет явлиется ли b + c положительной 
- * \param b параметр b
- * \param c параметр c
- * \return значение суммы
- */
-double getSum3(const double b, const double c);
+double getSum(const double a, const double b, const double c);
 
 /**
  * \brief Точка входа в программу
@@ -44,43 +29,25 @@ int main()
     double c;
     cin >> c;
 
-    
-    const double a1 = getSum1(a, b);
-    const double a2 = getSum2(a, c);
-    const double a3 = getSum3(b, c);
-   
-    
-    
-    if ((a + b) > 0) { 
-        cout << "Сумма положительна: a + b = "  << a1 << endl;
+
+    const double a0 = getSum(a, b, c);
+
+    if (a0 == true) 
+    { 
+        cout << "Да" << endl;
+       
     }
-    
-    if ((a + c) > 0) { 
-        cout << "Сумма положительна: a + c = " << a2 << endl;
+    else
+    {
+    cout << "Нет" << endl;
     }
-    
-    if ((b + c) > 0) { 
-        cout << "Сумма положительна: b + c = " << a3 << endl;
-    }
-    
-    if (((a + b) < 0) && ((a + c) < 0) && ((b + c) < 0)) { 
-        cout << "Из  чисел a, b, c не вышла ни одна  положительная сумма " << endl;
-    }
-    
 }
 
 
-double getSum1(const double a, const double b)
+double getSum(const double a, const double b, const double c)
 {
-    return a + b;
-}
-
-double getSum2(const double a, const double c)
-{
-    return a + c;
-}
-
-double getSum3(const double b, const double c)
-{
-    return b + c;
+    if ((a + b > 0) || (a + c > 0) || (b + c > 0)) {
+        return true;   
+    }
+    return false;
 }
