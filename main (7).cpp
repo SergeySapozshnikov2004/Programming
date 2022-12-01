@@ -5,13 +5,12 @@
 using namespace std;
 
 /**
- * \brief Эта функция проверяет есть ли среди чисел сумма положительная 
- * \param a параметр a
- * \param b параметр b
- * \param c параметр с
- * \return true или  false
+ * \brief Эта функция проверяет явлиется ли x + y положительной 
+ * \param x параметр x
+ * \param y параметр y
+ * \return true или false
  */
-double getSum(const double a, const double b, const double c);
+bool Sum(int x, int y);
 
 /**
  * \brief Точка входа в программу
@@ -19,35 +18,22 @@ double getSum(const double a, const double b, const double c);
  */
 int main()
 {
+    int a, b, c;
     cout << "Введите a" << endl;
-    double a;
     cin >> a;
     cout << "Введите b" << endl;
-    double b;
     cin >> b;
     cout << "Введите c" << endl;
-    double c;
     cin >> c;
 
-
-    const double a0 = getSum(a, b, c);
-
-    if (a0 == true) 
-    { 
-        cout << "Да" << endl;
-       
-    }
+    if (Sum(a, b) or Sum(b, c) or Sum(a, c)) 
+        std::cout << "Yes" << endl;
     else
-    {
-    cout << "Нет" << endl;
-    }
+    cout << "No" << endl;
 }
 
 
-double getSum(const double a, const double b, const double c)
+bool Sum(int x, int y)
 {
-    if ((a + b > 0) || (a + c > 0) || (b + c > 0)) {
-        return true;   
-    }
-    return false;
+    return (x + y > 0);
 }
