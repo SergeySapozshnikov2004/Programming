@@ -10,7 +10,7 @@ using namespace std;
  * \param y параметр y
  * \return true или false
  */
-bool Sum(int x, int y);
+bool Sum(const int x, const int y);
 
 /**
  * \brief Точка входа в программу
@@ -26,14 +26,14 @@ int main()
     cout << "Введите c" << endl;
     cin >> c;
 
-    if (Sum(a, b) or Sum(b, c) or Sum(a, c)) 
+    if (Sum(a, b) || Sum(b, c) || Sum(a, c)) 
         std::cout << "Yes" << endl;
     else
     cout << "No" << endl;
 }
 
 
-bool Sum(int x, int y)
+bool Sum(const int x, const int y)
 {
     return (x + y > 0);
 }
