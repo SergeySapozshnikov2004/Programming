@@ -311,24 +311,21 @@ void exchangeElementByZero(int* array, const size_t size, size_t minIndex, size_
 
 size_t getIndexMin(int* array, const size_t size, int minElement)
 {
-    for (size_t i = 0; i < size; i++)
-  {
-    if (array[i] == minElement)
+    size_t i = 0; 
+    while (i < size && array[i] != minElement )
     {
-      return i;
+        i++;
     }
-  }
-  return 0;
+    return i;
 }
+
 
 size_t getIndexMax(int* array, const size_t size, int maxElement)
 {
-    for (size_t i = 0; i < size; i++)
-  {
-    if (array[i] == maxElement)
+    size_t i = 0; 
+    while (i < size && array[i] != maxElement )
     {
-      return i;
+        i++;
     }
-  }
-  return 0;
+    return i;
 }
